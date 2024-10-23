@@ -1,18 +1,196 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>{% block title %}{% endblock %}</title>
-  <link href="{% static "css/smart_blog.css" %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Blog{% endblock %}</title>
+    
+    <!-- Link to external stylesheet -->
+    <link href="{% static 'css/smart_blog.css' %}" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Enhanced Styles for Professional Look -->
+    <style>
+        /* General Resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            border-bottom: 5px solid #ff6600; /* Orange accent */
+        }
+
+        /* Navbar Styling */
+        #navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #444444;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        #navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        #navbar a:hover {
+            background-color: #ff6600; /* Orange hover effect */
+            border-radius: 5px;
+        }
+
+        /* Main Content Area */
+        #main {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #content {
+            width: 70%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #content h1, #content h2 {
+            color: #333333;
+            border-bottom: 2px solid #ff6600; /* Orange highlight for titles */
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        #content p {
+            margin-bottom: 20px;
+            color: #555555;
+            line-height: 1.8;
+        }
+
+        /* Sidebar Styling */
+        #sidebar {
+            width: 25%;
+            background-color: #e0e0e0; /* Light grey background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+        }
+
+        #sidebar h2 {
+            font-size: 1.5rem;
+            color: #333333;
+            border-bottom: 2px solid #339933; /* Green accent for sidebar titles */
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        #sidebar p {
+            font-size: 1rem;
+            color: #555555;
+            margin-bottom: 15px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 5px solid #339933; /* Green accent */
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #ff6600; /* Orange links in footer */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            #main {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            #content, #sidebar {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            #sidebar {
+                margin-top: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="content">
-    {% block content %}
-    {% endblock %}
-  </div>
-  <div id="sidebar">
-    <h2>My blog</h2>
-    <p>This is my blog.</p>
-  </div>
+
+<header>
+    My Professional Blog
+</header>
+
+<!-- Navigation bar -->
+<nav id="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+</nav>
+
+<!-- Main content area -->
+<div id="main">
+    <div id="content">
+        {% block content %}
+        <!-- Blog content will go here -->
+        <h1>Blog Title</h1>
+        <p>Welcome to my blog. Here's a professional layout designed to give your content the spotlight it deserves.</p>
+        {% endblock %}
+    </div>
+
+    <!-- Sidebar section -->
+    <aside id="sidebar">
+        <h2>About This Blog</h2>
+        <p>This blog shares insights into web development, technology trends, and more. Stay tuned for weekly updates!</p>
+    </aside>
+</div>
+
+<!-- Footer section -->
+<footer>
+    <p>&copy; 2024 My Blog | Built with ❤ by <a href="#">Your Name</a></p>
+</footer>
+
 </body>
 </html>
